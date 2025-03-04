@@ -1,0 +1,42 @@
+[
+  [
+    {
+      "path": "ut/resources/test_files/group1_file4.docx",
+      "hash": "b19810cd4731a4879195d728ceb1b688682db8a331ea4568e2cf926abea6f48c"
+    },
+    {
+      "path": "ut/resources/test_files/group1_file5.docx",
+      "hash": "f9c2830a96f736e8a66f1bc66bca398dcac5531411683bcfe6c5a042c08afac7"
+    },
+    {
+      "path": "ut/resources/test_files/group1_file2.docx",
+      "hash": "b19810cd4731a4879195d728ceb1b688682db8a331ea4568e2cf926abea6f48c"
+    },
+    {
+      "path": "ut/resources/test_files/group1_file3.docx",
+      "hash": "f9c2830a96f736e8a66f1bc66bca398dcac5531411683bcfe6c5a042c08afac7"
+    },
+    {
+      "path": "ut/resources/test_files/group1_file1.docx",
+      "hash": "2243e73f4d9190d447a4c87a6219f1c2ba07b0d11e6f015ade57bdc803907ae6"
+    }
+  ],
+  [
+    {
+      "path": "ut/resources/test_files/group2_file1.docx",
+      "hash": "062d869074570f7dc3d73913276559f9f2d491758ec2d3b27c39cb4706ef6113"
+    },
+    {
+      "path": "ut/resources/test_files/group2_file3.docx",
+      "hash": "32cdfa661c5eba1c66a2e69be66d0a6ecebb25a0c1f8b1dbbc2d0ab311ba6e60"
+    },
+    {
+      "path": "ut/resources/test_files/group2_file2.docx",
+      "hash": "8207d3811768009d18fec34dae1649cc8b0e61900161ea1059e0f290e4923e2e"
+    },
+    {
+      "path": "ut/resources/test_files/group2_file4.docx",
+      "hash": "32cdfa661c5eba1c66a2e69be66d0a6ecebb25a0c1f8b1dbbc2d0ab311ba6e60"
+    }
+  ]
+]

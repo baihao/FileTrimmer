@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Comparison</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Document Comparison Tool</h1>
+        
+        <div class="input-group">
+            <label>Document Directory:</label>
+            <input type="text" id="inputDir" placeholder="/path/to/documents">
+        </div>
+        
+        <div class="input-group">
+            <label>Cache Directory:</label>
+            <input type="text" id="cacheDir" placeholder="/path/to/cache">
+        </div>
+
+        <div class="button-group">
+            <button onclick="runAnalysis()">Analyze Documents</button>
+            <button onclick="resetForm()" class="reset-btn">Reset</button>
+        </div>
+        
+        <div id="results" class="results-container"></div>
+    </div>
+
+    <script>
+    function resetForm() {
+        document.getElementById('inputDir').value = '';
+        document.getElementById('cacheDir').value = '';
+        document.getElementById('results').innerHTML = '';
+    }
+    function runAnalysis() {
+        const inputDir = document.getElementById('inputDir').value;
+        const cacheDir = document.getElementById('cacheDir').value;
+
+        fetch('/compare', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                inputDir: inputDir,
+                cacheDir: cacheDir
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            const results = document.getElementById('results');
+            results.innerHTML = '';
+            
+            if (data.success) {
+                data.groups.forEach((group, index) => {
+                    const groupDiv = document.createElement('div');
+                    groupDiv.className = 'group';
+                    groupDiv.innerHTML = `
+                        <h3>Group ${index + 1} (${group.length} files)</h3>
+                        <div class="file-list">
+                            ${group.map(file => `
+                                <div class="file-item">${file.path}</div>
+                            `).join('')}
+                        </div>
+                    `;
+                    results.appendChild(groupDiv);
+                });
+            } else {
+                results.innerHTML = `<div class="error">Error: ${data.error}</div>`;
+            }
+        });
+    }
+    </script>
+</body>
+</html>
